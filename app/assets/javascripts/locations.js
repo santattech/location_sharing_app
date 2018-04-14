@@ -14,6 +14,13 @@ LS.Map = {
       })
     ];
 
+    var popup = new ol.Overlay({
+      positioning: 'center-center',
+      element: document.getElementById('marker')
+    });
+    popup.setPosition(kolkata);
+    
+
     var map = new ol.Map({
       layers: layers,
       target: 'map',
@@ -24,6 +31,8 @@ LS.Map = {
       }),
       view: view
     });
+
+    map.addOverlay(popup);
     
   }
 }

@@ -1,3 +1,9 @@
-// Place all the styles related to the locations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.marker {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #800000;
+  border-radius: 10px;
+  background-color: #800000;
+  opacity: 0.8;
+}
+
