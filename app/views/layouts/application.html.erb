@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rtest</title>
+  <title>Share your location</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <%= render 'shared/flash' %>
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= include_unobtrusive_js%>
 </body>
 </html>
