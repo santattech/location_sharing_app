@@ -47,3 +47,11 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec-rails', '3.4.2'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker', '1.6.3'
+  
+end
+
