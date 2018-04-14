@@ -7,8 +7,17 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [] do 
+    member do 
+      post :add_friend
+      get :show_friend_requests
+      put :accept_friend
+    end
+
     resources :locations
   end
+
+  get '/search' => 'search#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
