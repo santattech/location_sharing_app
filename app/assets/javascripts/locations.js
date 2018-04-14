@@ -33,6 +33,17 @@ LS.Map = {
     });
 
     map.addOverlay(popup);
-    
+    this.map = map;
+  },
+
+  addClickEvent: function() {
+    this.map.on('click', function(evt) {
+      var coordinate = evt.coordinate;
+      var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
+          coordinate, 'EPSG:3857', 'EPSG:4326'));
+      console.log(coordinate);
+      console.log(hdms);
+    })
   }
+
 }
