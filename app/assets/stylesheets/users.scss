@@ -19,6 +19,41 @@
   margin-top: 13px;
 }
 
+.searched-result {
+
+  &__user {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    padding: 20px;
+
+    &__image {
+      padding: 20px;
+
+      img {
+         width: 100%;
+      }
+    }
+  }
+}
+
+.friend-requests {
+  margin-top:  13px;
+  margin-right: 17px;
+
+  &__count {
+    color: #fff;
+    background-color: brown;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  &__count:hover {
+    color: #fff;
+  }
+}
+
 .friend-list {
   border-left: 2px solid #ccc;
   padding-left: 10px;

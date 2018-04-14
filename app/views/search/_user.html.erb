@@ -1,6 +1,4 @@
-<div class="col-sm-3">
-  <div class="user-<%= user.id %>">
-    <p><%= image_tag user.image_url %></p>
+    <p class="searched-result__user__image"><%= image_tag user.image_url %></p>
     <p class="text-center"><%= user.name %></p>
     <p><% if current_user.friend_requests_sent_to?(user) %>
         <span class="label label-info">Request Sent</span>
@@ -10,5 +8,3 @@
         <%= link_to "Add friend", add_friend_user_path(user), method: :post, remote: true, class: "btn btn-primary btn-xs" %>
       <% end %>
     </p>
-  </div>
-</div>

@@ -2,11 +2,13 @@
 
 <div class="search-result">
 <div class="row">
-  <% @users.in_groups_of(4, false) do |users| %>
+  <% @users.in_groups_of(6, false) do |users| %>
     <% users.each do |user| %>
-
-      <%= render 'user', user: user %>
-      
+      <div class="col-sm-2 col-md-2">
+        <div class="user-<%= user.id %> searched-result__user">
+          <%= render 'user', user: user %>
+        </div>
+      </div>  
     <% end %>
   <% end %>
   </div>
