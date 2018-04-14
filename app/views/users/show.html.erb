@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="user-details">
+      <p class="text-center"><%= image_tag current_user.image_url %></p>
+      <p class="text-center"><%= current_user.name %></p>
+      <p class="text-center"><%= current_user.email %></p>
+    </div>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="friend-list">
+      <h3 class="friend-list__header">Friends (<%= @friends.count %>)</h3>
+      <div class="row">
+        <% @friends.in_groups_of(4, false) do |users| %>
+        <% users.each do |user| %>
+        <div class="col-sm-3">
+          <div class="friend-list__profile">
+            <p class="friend-list__profile__image"><%= image_tag user.image_url %></p>
+            <p class="text-center"><%= user.name %></p>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

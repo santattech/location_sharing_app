@@ -1,0 +1,12 @@
+<h3>Search Results</h3>
+
+<div class="search-result">
+<div class="row">
+  <% @users.in_groups_of(4, false) do |users| %>
+    <% users.each do |user| %>
+
+      <%= render 'user', user: user %>
+      
+    <% end %>
+  <% end %>
+  </div>

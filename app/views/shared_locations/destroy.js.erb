@@ -1,0 +1,1 @@
+$(".user-share-<%= @shared_location.share_with_id %>").html('<%= link_to "Share", user_shared_locations_path(@shared_location.share_with_id, location_id: @shared_location.location_id), method: :post, remote: true, class: "btn btn-xs btn-primary" %>');

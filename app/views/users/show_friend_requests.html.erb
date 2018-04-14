@@ -1,0 +1,11 @@
+<div class="row">
+  <% @senders.in_groups_of(2, false) do |users| %>
+    <% users.each do |u| %>
+      <div class="col-md-6 user-<%= u.id %>">
+        <p class="text-center"><%= image_tag u.image_url %></p>
+        <p class="text-center"><%= u.name %></p>
+        <p class="text-center user-accept-<%= u.id %>"><%= link_to "Accept", accept_friend_user_path(u), method: :put, remote: true, class: "btn btn-sm btn-primary" %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

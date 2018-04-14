@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   has_many :friend_requests, -> {where(accepted_at: nil) }, class_name: 'UserFriend', foreign_key: :friend_id
   has_many :friend_requests_sender, through: :friend_requests, source: :user
 
+  has_many :shared_locations, dependent: :destroy
+  
+
   def image_url
     "/assets/user.png"
   end

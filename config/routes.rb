@@ -6,12 +6,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :users, only: [] do 
+  resources :users, only: [:show] do 
     member do 
       post :add_friend
-      get :show_friend_requests
+      get :show_friend_requests, :share_locations
       put :accept_friend
     end
+
+    resources :shared_locations, only: [:create, :destroy]
 
     resources :locations
   end

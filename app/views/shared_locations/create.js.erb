@@ -1,0 +1,1 @@
+$(".user-share-<%= @shared_location.share_with_id %>").html('<%= link_to "Stop Sharing", user_shared_location_path(@shared_location.share_with_id, @shared_location.id), method: :delete, remote: true, class: "btn btn-xs btn-primary" %>');

@@ -47,16 +47,6 @@ LS.Map = {
       map.addOverlay(locationText);
     });
 
-    /*var popup = new ol.Overlay({
-      positioning: 'center-center',
-      element: document.getElementById('marker')
-    });
-    popup.setPosition(kolkata);
-    
-
-    
-
-    //map.addOverlay(popup);*/
     this.map = map;
   },
 
@@ -78,3 +68,9 @@ LS.Map = {
   }
 
 }
+
+$(".location-text").click(function(e) {
+  e.preventDefault();
+  var userId = $("#map").data('user');
+  LS.Modal.showRemoteModal("/users/"+ userId +"/share_locations?location_id="+$(this).data("location"), "Share your location", "share-loc-modal");
+});

@@ -1,0 +1,18 @@
+<div class="row">
+  <% @friends.in_groups_of(3, false) do |users| %>
+    <% users.each do |u| %>
+      <div class="col-md-4 user-<%= u.id %>">
+        <p class="text-center"><%= image_tag u.image_url %></p>
+        <p class="text-center"><%= u.name %></p>
+        <p class="text-center user-share-<%= u.id %>">
+          <% if @share_with_ids.include?(u.id) %>
+            <% s = @share_locations.detect {|s| s.share_with_id == u.id} %>
+            <%= link_to "Stop Sharing", user_shared_location_path(s.share_with_id, s.id), method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
+          <% else %>
+            <%= link_to "Share", user_shared_locations_path(u, location_id: @location.id), method: :post, remote: true, class: "btn btn-xs btn-primary" %>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
