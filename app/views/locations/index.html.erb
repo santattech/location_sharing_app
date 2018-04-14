@@ -1,7 +1,10 @@
 <h3>My Maps</h3>
-<div id="map" class="map" tabindex="0"></div>
+<div id="map" class="map" style="width=100%; height: 600px" tabindex="0" data-user="<%= current_user.id %>" data-locations="<%= @locations.to_json %>"></div>
 
 <div style="display: none;">
-  <div id="marker" title="Marker" class="marker"></div>
+  <% @locations.each_with_index do |location, index| %>
+    <a id="loc-<%= index + 1 %>" href="#" class="location-text"><%= location.created_at.strftime("%d/%m/%Y %I:%M %p") %></a>
+    <div id="marker-<%= index+1 %>" title="Marker" class="marker"></div>
+  <% end %>
 </div>
 <%= unobtrusive_js("LS.Map.initMap();  LS.Map.addClickEvent();") %>
