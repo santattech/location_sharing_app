@@ -7,6 +7,7 @@
         <% if current_user %>
           <li><%= link_to "Friends", user_path(current_user) %></li>
           <li><%= link_to "My Locations", user_locations_path(current_user) %></li>
+          <li><%= link_to "My Friends Locations", friends_locations_user_path(current_user) %></li>
         <% end %>
       </ul>
 

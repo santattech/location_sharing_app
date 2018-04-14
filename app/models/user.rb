@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
   has_many :friend_requests_sender, through: :friend_requests, source: :user
 
   has_many :shared_locations, dependent: :destroy
-  
+
+  has_many :shared_locations_by, class_name: 'SharedLocation', foreign_key: :share_with_id
+  has_many :locations_shared_with_me, through: :shared_locations_by, source: :location  
 
   def image_url
     "/assets/user.png"

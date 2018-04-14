@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do 
     member do 
       post :add_friend
-      get :show_friend_requests, :share_locations
+      get :show_friend_requests, :share_locations, :friends_locations
       put :accept_friend
     end
 

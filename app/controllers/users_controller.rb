@@ -24,10 +24,13 @@ class UsersController < ApplicationController
 
   def share_locations
     @location = current_user.locations.find(params[:location_id])
-    binding.pry
     @share_locations = current_user.shared_locations.where(location_id: @location.id)
     @share_with_ids = @share_locations.pluck(:share_with_id)
     @friends = current_user.friends.where.not(user_friends: {accepted_at: nil})
     render layout: false
+  end
+
+  def friends_locations
+    @locations = current_user.locations_shared_with_me.includes(:user)
   end
 end
