@@ -1,0 +1,43 @@
+.alert-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.sign-in-container, .sign-up-container {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.search-form {
+  margin-top: 13px;
+}
+
+.friend-list {
+  border-left: 2px solid #ccc;
+  padding-left: 10px;
+
+  &__header {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  &__profile {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    padding: 20px;
+
+    &__image {
+      padding: 20px;
+
+      img {
+         width: 100%;
+      }
+    }
+  }
+}
